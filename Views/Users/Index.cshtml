@@ -1,0 +1,34 @@
+﻿@model IEnumerable<User>
+@{
+    Layout = "_mainLayout";
+}
+<p>ALL Users</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">UserId</th>
+            <th scope="col">UserName</th>
+            <th scope="col">Password</th>
+            <th scope="col">IsActive</th>
+            <th scope="col">CreatedAt</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var user in Model)
+        {
+            <tr>
+                <th scope="row">@user.UserId</th>
+                <td>@user.UserName</td>
+                <td>@user.Password</td>
+                <td>@user.IsActive <a asp-controller="Users" asp-action="Change" asp-route-id="@user.UserId" class="btn btn-success">Change</a></td>
+                <td>@user.CreatedAt</td>
+                <td>
+                    <a asp-controller="Users" asp-action="Update" asp-route-id="@user.UserId">Update</a>
+                    <a asp-controller="Users" asp-action="Delete" asp-route-id="@user.UserId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetAll</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="mt-2">
+            <a href="/Home/Index" class="btn btn-success">Home</a>
+        </nav>
+    </header>
+    <main>
+        <section class="content">
+            @RenderBody()
+        </section>
+    </main>
+    <footer class="bg-secondary text-center">
+        Malak Taha - Task2MVC
+    </footer>
+</body>
+</html>

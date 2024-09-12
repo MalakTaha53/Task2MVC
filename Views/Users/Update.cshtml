@@ -1,0 +1,19 @@
+﻿@model User
+@{
+    Layout = "_mainLayout";
+}
+<p>Update View</p>
+
+<form asp-controller="Users" asp-action="Update">
+    <div class="my-3">
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" class="form-control" value="@Model.UserName" />
+    </div>
+    <input type="hidden" class="form-control" name="UserId" value="@Model.UserId" />
+    <div class="my-3">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" value="@Model.Password" />
+    </div>
+    <button type="submit" class="btn btn-outline-primary">Update</button>
+
+</form>
